@@ -1,4 +1,5 @@
 -Q . Tactics
+Bool2Prop.v
 CpdtTactics.v
-SfLib.v
 NatInduction.v
+SfLib.v
