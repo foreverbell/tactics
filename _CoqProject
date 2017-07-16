@@ -1,4 +1,5 @@
 -Q . Tactics
+Bool2Prop.v
 CpdtTactics.v
 FrapTactics.v
 SfLib.v
