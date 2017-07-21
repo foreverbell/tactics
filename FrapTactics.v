@@ -4,14 +4,7 @@
   * License: https://creativecommons.org/licenses/by-nc-nd/4.0/
   *)
 
-Require Import Eqdep String Arith Omega Program Relations Bool.
-Export String Arith Relations Bool.
-
-Require Import List.
-Export List ListNotations.
-
-Open Scope string_scope.
-Open Scope list_scope.
+Require Import Eqdep String Arith Omega Program Relations Bool List.
 
 Ltac inductN n :=
   match goal with
