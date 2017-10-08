@@ -2,4 +2,6 @@
 Bool2Prop.v
 CpdtTactics.v
 FrapTactics.v
+PermutationSolver.v
+PermutationSolver/PermutationSolver.v
 SfLib.v

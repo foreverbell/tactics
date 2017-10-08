@@ -1,0 +1,1 @@
+Require Export Tactics.PermutationSolver.PermutationSolver.
