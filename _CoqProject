@@ -1,7 +1,6 @@
 -Q . Tactics
-Bool2Prop.v
+Tactics.v
 CpdtTactics.v
 FrapTactics.v
 PermutationSolver.v
 PermutationSolver/PermutationSolver.v
-SfLib.v
