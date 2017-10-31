@@ -1,4 +1,4 @@
-Require Import Bool Arith.
+Require Import Bool Arith Eqdep.
 
 Tactic Notation "solve_by_inversion_step" tactic(t) :=
   match goal with
@@ -50,3 +50,9 @@ Ltac bdestruct X :=
           apply Nat.compare_lt_iff in H |
           apply Nat.compare_gt_iff in H ]
     end.
+
+Ltac inv_existT :=
+  repeat match goal with
+  | [ H: existT ?P ?p _ = existT ?P ?p _ |- _ ] =>
+      apply inj_pair2 in H; subst
+  end.
