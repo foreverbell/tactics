@@ -1,6 +1,5 @@
 -Q . Tactics
 Tactics.v
-CpdtTactics.v
-FrapTactics.v
+Crush.v
 PermutationSolver.v
 PermutationSolver/PermutationSolver.v

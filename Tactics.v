@@ -15,6 +15,11 @@ Tactic Notation "solve" "by" "inversion" "3" :=
 Tactic Notation "solve" "by" "inversion" :=
   solve by inversion 1.
 
+Ltac invert H := inversion H; clear H; subst.
+Ltac invert0 H := invert H; fail.
+Ltac invert1 H := invert0 H || (invert H; []).
+Ltac invert2 H := invert1 H || (invert H; [|]).
+
 Ltac bsimpl :=
   repeat
     match goal with
@@ -52,7 +57,13 @@ Ltac bdestruct X :=
     end.
 
 Ltac inv_existT :=
-  repeat match goal with
-  | [ H: existT ?P ?p _ = existT ?P ?p _ |- _ ] =>
-      apply inj_pair2 in H; subst
+  repeat
+    match goal with
+    | [ H: existT ?P ?p _ = existT ?P ?p _ |- _ ] =>
+        apply inj_pair2 in H; subst
+    end.
+
+Ltac f_apply H f :=
+  match type of H with
+  | ?X = ?Y => assert (f X = f Y) by (rewrite H; auto)
   end.
